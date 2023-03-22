@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>chschat</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+  </head>
+        <body>
+    
+                                                    <!-- ChatApp v0.55 -->
+                                 <!-- Created by Casey LeBlanc, Damian Guy, and Gardy Hoffman -->
+                                                <!-- Last Edited 1-30-23 -->
+        
+                <!--BACKGROUND AND CENTER BOX SETUP-->
+                <div class="bg" id="bg"></div>
+                <div class="bigbox">
+                <div class="centered" id="centerbox">
+                <br>
+                <!--CREATING ID-->
+                <h2>chschat</h1>
+                <input class="textbox" type="text" id="yourCode" name="friendCode" placeholder= "Your Chat Id..."> 
+                <input class="inputformat" id="confirm" type="button" value="Create Your Code">
+                <aside id="themebox">
+                <!--THEMES SETUP-->
+                <h3>Themes</h3>
+                <br>
+                <h4>Solid Colors</h4>
+                <input class="inputformat themebutton" type="button" id="dark" value="Dark">
+                <br>
+                <input class="inputformat themebutton" type="button" id="light" value="Light">
+                <br>
+                <h4>Gradients</h4>
+                <input class="inputformat themebutton" type="button" id="rainbow" value="Rainbow">
+                <br>
+                <input class="inputformat themebutton" type="button" id="relay" value="Relay">
+                <br>
+                <h4>Custom Color</h4>
+                <input class="textbox themetextbox" type="text" id="hexcodeinput" placeholder="Hex Code">
+                </aside>
+                <br>
+                <br>
+                <!--FRIENDS SETUP-->
+                <input class="textbox" type="text" id="fid" name="friend" placeholder="Your friend's code...">
+                <input class="inputformat" id="connectSub" type="button" value="Connect to Friend"> 
+                <br>
+                <br>
+                <!--OVERALL OUTPUT-->
+                <textarea class="chatbox" id="chatlog" rows="4" cols="50" readonly> </textarea>
+                <br>
+                <br>
+                <input class="textbox" type="text" id="message" placeholder="Send a Message...">
+                <input class="inputformat" type="button" id="VCbutton" value="Voice Chat">
+                <input class ="inputformat" type="button" id="Vidbutton" value="Video Chat">
+                <br>
+                <audio id = "audio1" autoplay></audio>
+                <video id = "video1" autoplay></audio>
+                <br>
+                <br>
+                <footer class="">Created by CDG<br>Made with peer.js</footer>
+                </div>        
+                </div>
+                <!--SPLASH PAGE-->
+                <div class="intro">
+                <h1 class="logo-header">
+                        <span class="logo">chs</span><span class="logo">chat</span>
+                </h1>
+        </div>
+        <div id="result"></div>
+        </body>
+</html>
