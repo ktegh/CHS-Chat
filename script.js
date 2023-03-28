@@ -100,50 +100,6 @@ confirm.onclick = function () {
     window.alert('Please input a code into the field on the left!');
   }
 };
-confirm.onkeydown = function(e){
-if(e.which == 13){
-  if (localuser == null && input.value != '') {
-    localuser = new Peer(input.value);
-    window.alert('Your user id is: ' + localuser.id);
-    // connection listener
-    localuser.on('connection', function (conn) {
-      connection = conn; //sets connection equal to temp variable
-      connection.on('open', function () {
-        window.alert("Connected!") //logs a received connection
-        connection.on('data', function (data) {
-          chatlog.value += connection.peer + ': ' + data + '\n';
-        });
-      });
-    });
-    localuser.on('call', function (thecall) {
-      window.alert('Recieving call from ' + 'localuser');
-
-      thecall.answer(vcstream);
-      thecall.on('stream', function (stream) {
-        window.alert('Recieving voice channel from ' + localuser);
-        remoteAudio.srcObject = stream;
-        remoteVideo.srcObject = stream;
-      });
-    });
-    localuser.on('error', function (err) {
-      window.alert(err.type);
-      if (err.type == 'peer-unavailable') {
-        window.alert(
-          'The peer you are trying to connect to is unavailable! Please retry.'
-        );
-      }
-    });
-  } else if (localuser != null) {
-    window.alert('Peer already created! Your user id is: ' + localuser.id);
-  } else {
-    window.alert('Please input a code into the field on the left!');
-  }
-}
-else if(e.which!= 13){
-  window.alert('Use the enter button to submit the values!');
-}
-};
-
 //Connection----------------------------------------------------------------------------
 connectSub.onclick = function () {
   if (localuser != null && connection == null) {
